@@ -9,6 +9,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider  } from "react-router";
 import Home from './Components/Home.jsx';
 import Rootlayout from './Components/Rootlayout.jsx';
+import Products from './Components/Products.jsx';
 
 
 const router = createBrowserRouter([
@@ -26,12 +27,11 @@ const router = createBrowserRouter([
 
 
     {
-      path: "/products",
-      element: <div>
-        <h1>This is product function</h1>
-      </div>
-    }
-    
+        path : "/products", 
+        element : <Products></Products>,
+        loader : () => fetch('doctors.json')
+      }
+
    ]
    
   },
